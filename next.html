@@ -30,22 +30,41 @@
       background-position: center;
       display: flex;
       align-items: center;
-      padding: 2rem;
+      padding: 3rem 6rem;
     }
 
     .content {
       max-width: 900px;
       color: black;
-      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-      line-height: 1.6;
+      font-size: 1.45rem;
+      line-height: 1.65;
     }
 
     .content p + p {
-      margin-top: 1.5rem;
+      margin-top: 1.8rem;
     }
 
     .right-column {
       text-align: right;
+    }
+
+    /* 📱 Mobile optimization */
+    @media (max-width: 768px) {
+      section {
+        padding: 2.5rem 1.4rem;
+        justify-content: center !important;
+      }
+
+      .content {
+        max-width: 560px;
+        font-size: 1.15rem;
+        line-height: 1.75;
+        text-align: center !important;
+      }
+
+      .content p + p {
+        margin-top: 1.4rem;
+      }
     }
   </style>
 </head>
@@ -54,7 +73,7 @@
   <!-- Background Audio -->
   <audio id="bg-audio" src="audio.mp3" loop></audio>
 
-  <!-- Section 1 — 3.jpg -->
+  <!-- Section 1 — 3.jpg (CENTERED) -->
   <section style="background-image: url('3.jpg'); justify-content: center;">
     <div class="content" style="text-align: center;">
       <p>
@@ -72,7 +91,7 @@
     </div>
   </section>
 
-  <!-- Section 2 — 2.jpg -->
+  <!-- Section 2 — 2.jpg (RIGHT on desktop, CENTER on mobile) -->
   <section style="background-image: url('2.jpg'); justify-content: flex-end;">
     <div class="content right-column">
       <p>
@@ -92,9 +111,7 @@
     const audio = document.getElementById('bg-audio');
 
     if (sessionStorage.getItem('playAudio') === 'yes') {
-      audio.play().catch(() => {
-        // If browser still blocks, fail silently
-      });
+      audio.play().catch(() => {});
     }
   </script>
 
