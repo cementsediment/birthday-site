@@ -9,7 +9,13 @@
     @font-face {
       font-family: 'GlacialIndifference';
       src: url('https://fonts.cdnfonts.com/s/15412/GlacialIndifference-Regular.woff') format('woff');
-      font-weight: normal;
+      font-weight: 400;
+    }
+
+    @font-face {
+      font-family: 'GlacialIndifference';
+      src: url('https://fonts.cdnfonts.com/s/15412/GlacialIndifference-Bold.woff') format('woff');
+      font-weight: 700;
     }
 
     * {
@@ -35,9 +41,10 @@
 
     .content {
       max-width: 900px;
-      color: #f5f5f5; /* light text */
+      color: #f5f5f5;
       font-size: 1.45rem;
       line-height: 1.65;
+      font-weight: 600; /* 🔥 BOLDER TEXT */
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
     }
 
@@ -61,6 +68,7 @@
         font-size: 1.15rem;
         line-height: 1.75;
         text-align: center !important;
+        font-weight: 600;
       }
     }
   </style>
@@ -76,12 +84,11 @@
     if (sessionStorage.getItem('playAudio') === 'yes') {
       audio.play().then(() => {
         audio.muted = false;
-      }).catch(() => {
-        // If still blocked, user will need interaction
-      });
+      }).catch(() => {});
     }
   </script>
-  <!-- Section 1 — 3.jpg (CENTERED) -->
+
+  <!-- Section 1 — 3.jpg -->
   <section
     style="
       background-image:
@@ -91,6 +98,29 @@
     "
   >
     <div class="content" style="text-align: center;">
+      <p>
+        I know I got angry and spoke words which can never be forgiven for!
+        But I ask an heartfelt sorry here, apology is yours to accept but all I wanted
+        was a small gesture or talk from you due to which this whole situation raised!
+      </p>
+
+      <p>
+        For the man, I see in you is this whole background
+        (a kind of manifestation is visualisation) – happy birthday!
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 2 — 2.jpg -->
+  <section
+    style="
+      background-image:
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url('2.jpg');
+      justify-content: flex-end;
+    "
+  >
+    <div class="content right-column">
       <p>
         You keep asking, what I saw? This is what I saw.
         And I am not here to tell that I love you!
@@ -105,36 +135,6 @@
       </p>
     </div>
   </section>
-
-  <!-- Section 2 — 2.jpg (RIGHT on desktop, CENTER on mobile) -->
-  <section
-    style="
-      background-image:
-        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-        url('2.jpg');
-      justify-content: flex-end;
-    "
-  >
-    <div class="content right-column">
-      <p>
-        I know I got angry and spoke words which can never be forgiven for!
-        But I ask an heartfelt sorry here, apology is yours to accept but all I wanted
-        was a small gesture or talk from you due to which this whole situation raised!
-      </p>
-
-      <p>
-        For the man, I see in you is this whole background
-        (a kind of manifestation is visualisation) – happy birthday!
-      </p>
-    </div>
-  </section>
-
-  <script>
-    const audio = document.getElementById('bg-audio');
-    if (sessionStorage.getItem('playAudio') === 'yes') {
-      audio.play().catch(() => {});
-    }
-  </script>
 
 </body>
 </html>
