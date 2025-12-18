@@ -68,8 +68,19 @@
 <body>
 
   <!-- Background Audio -->
-  <audio id="bg-audio" src="audio.mp3" loop></audio>
+  <audio id="bg-audio" src="audio.mp3" loop muted></audio>
 
+  <script>
+    const audio = document.getElementById('bg-audio');
+
+    if (sessionStorage.getItem('playAudio') === 'yes') {
+      audio.play().then(() => {
+        audio.muted = false;
+      }).catch(() => {
+        // If still blocked, user will need interaction
+      });
+    }
+  </script>
   <!-- Section 1 — 3.jpg (CENTERED) -->
   <section
     style="
