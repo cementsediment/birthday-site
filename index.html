@@ -2,31 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Happy Birthday</title>
+  <title>For You</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
     @font-face {
       font-family: 'GlacialIndifference';
       src: url('https://fonts.cdnfonts.com/s/15412/GlacialIndifference-Regular.woff') format('woff');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'GlacialIndifference';
+      src: url('https://fonts.cdnfonts.com/s/15412/GlacialIndifference-Bold.woff') format('woff');
+      font-weight: 700;
     }
 
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'GlacialIndifference', sans-serif;
+      scroll-behavior: smooth;
+      background: black;
+    }
+
+    /* ---------- AUDIO ---------- */
+    audio {
+      display: none;
+    }
+
+    /* ---------- PAGE 1 ---------- */
+    .intro {
       height: 100vh;
       background: url('birthday-collage.jpg') center / cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'GlacialIndifference', sans-serif;
-      color: white;
       text-align: center;
+      color: white;
+      padding: 2rem;
     }
 
     h1 {
       font-size: clamp(2.2rem, 5vw, 4rem);
       letter-spacing: 0.12em;
       text-transform: uppercase;
+      font-weight: 700;
     }
 
     .line {
@@ -37,10 +61,10 @@
     }
 
     .heart-row {
-      margin-top: 1.5rem;
+      margin-top: 1.8rem;
       display: flex;
       justify-content: center;
-      gap: 0.6rem;
+      gap: 0.7rem;
       align-items: center;
     }
 
@@ -53,40 +77,150 @@
       font-size: 2.6rem;
       color: #ff4fa3;
       text-decoration: none;
+      cursor: pointer;
       text-shadow:
-        0 0 8px rgba(255, 79, 163, 0.6),
-        0 0 18px rgba(255, 79, 163, 0.5);
+        0 0 8px rgba(255,79,163,0.6),
+        0 0 18px rgba(255,79,163,0.5),
+        0 0 30px rgba(255,79,163,0.4);
+    }
+
+    /* ---------- PAGE 2 ---------- */
+    .story {
+      display: none;
+    }
+
+    section {
+      min-height: 100vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      padding: 3rem 6rem;
+    }
+
+    .content {
+      max-width: 900px;
+      color: #f5f5f5;
+      font-size: 1.45rem;
+      line-height: 1.65;
+      font-weight: 600;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.75);
+    }
+
+    .content p + p {
+      margin-top: 1.8rem;
+    }
+
+    .right-column {
+      text-align: right;
+    }
+
+    /* ---------- MOBILE ---------- */
+    @media (max-width: 768px) {
+      section {
+        padding: 2.5rem 1.4rem;
+        justify-content: center !important;
+      }
+
+      .content {
+        max-width: 560px;
+        font-size: 1.15rem;
+        line-height: 1.75;
+        text-align: center !important;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Audio starts muted -->
-  <audio id="bg-audio" src="audio.mp3" autoplay loop muted></audio>
+  <!-- AUDIO -->
+  <audio id="bg-audio" src="audio.mp3" loop muted></audio>
 
-  <div>
-    <h1>
-      Happy Birthday,
-      <span class="line">You Donkey!</span>
-    </h1>
+  <!-- PAGE 1 -->
+  <div class="intro" id="intro">
+    <div>
+      <h1>
+        Happy Birthday,
+        <span class="line">You Donkey!</span>
+      </h1>
 
-    <div class="heart-row">
-      <span class="click-text">click!</span>
-      <a href="next.html" class="heart">♥</a>
+      <div class="heart-row">
+        <span class="click-text">click!</span>
+        <span class="heart" id="heart">♥</span>
+      </div>
     </div>
   </div>
 
+  <!-- PAGE 2 (FORMER next.html) -->
+  <div class="story" id="story">
+
+    <!-- Section 1 -->
+    <section
+      style="
+        background-image:
+          linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+          url('3.jpg');
+        justify-content: center;
+      "
+    >
+      <div class="content" style="text-align: center;">
+        <p>
+          I know I got angry and spoke words which can never be forgiven for!
+          But I ask an heartfelt sorry here, apology is yours to accept but all I wanted
+          was a small gesture or talk from you due to which this whole situation raised!
+        </p>
+
+        <p>
+          For the man, I see in you is this whole background
+          (a kind of manifestation is visualisation) – happy birthday!
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section
+      style="
+        background-image:
+          linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+          url('2.jpg');
+        justify-content: flex-end;
+      "
+    >
+      <div class="content right-column">
+        <p>
+          You keep asking, what I saw? This is what I saw.
+          And I am not here to tell that I love you!
+          But every time I see an angry Sai, I convince myself that this is you
+          and that anger is a temporary part of you and once again happy happy birthday! 🫂
+        </p>
+
+        <p>
+          I wanna meet you soon at least for the sake of whatever I had with you for these
+          11 months even it was nothing for you, it meant the world for me.
+          I keep a count – started talking with you on Feb 11 2025 and here I am on Dec 21 2025!
+        </p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- SCRIPT -->
   <script>
+    const heart = document.getElementById('heart');
+    const intro = document.getElementById('intro');
+    const story = document.getElementById('story');
     const audio = document.getElementById('bg-audio');
 
-    function enableAudio() {
-      audio.muted = false;
-      document.removeEventListener('click', enableAudio);
-      document.removeEventListener('touchstart', enableAudio);
-    }
+    heart.addEventListener('click', () => {
+      audio.play().then(() => {
+        audio.muted = false;
+      }).catch(() => {});
 
-    document.addEventListener('click', enableAudio);
-    document.addEventListener('touchstart', enableAudio);
+      intro.style.display = 'none';
+      story.style.display = 'block';
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   </script>
 
 </body>
