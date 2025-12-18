@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy Birthday 🥳</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Glacial Indifference font -->
+  <style>
+    @font-face {
+      font-family: 'GlacialIndifference';
+      src: url('https://fonts.cdnfonts.com/s/15412/GlacialIndifference-Regular.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'GlacialIndifference';
+      src: url('https://fonts.cdnfonts.com/s/15412/GlacialIndifference-Bold.woff') format('woff');
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'GlacialIndifference', sans-serif;
+    }
+
+    body {
+      background: url('birthday-collage.jpg') center center / cover no-repeat fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Dark overlay for readability */
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        circle at center,
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.75)
+      );
+      z-index: 0;
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      padding: 3rem 2.5rem;
+      text-align: center;
+      backdrop-filter: blur(8px);
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 20px;
+      box-shadow:
+        0 0 40px rgba(255, 255, 255, 0.12),
+        inset 0 0 30px rgba(255, 255, 255, 0.05);
+      animation: floatIn 1.6s ease forwards;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: bold;
+      color: #ffffff;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-shadow:
+        0 0 10px rgba(255,255,255,0.35),
+        0 0 30px rgba(255,255,255,0.15);
+      animation: glow 3s ease-in-out infinite alternate;
+    }
+
+    .accent {
+      display: block;
+      margin-top: 1rem;
+      font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+      letter-spacing: 0.18em;
+      color: #ffd6a5;
+      animation: bounce 2.2s ease-in-out infinite;
+    }
+
+    @keyframes floatIn {
+      from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow:
+          0 0 10px rgba(255,255,255,0.3),
+          0 0 25px rgba(255,255,255,0.15);
+      }
+      to {
+        text-shadow:
+          0 0 20px rgba(255,255,255,0.55),
+          0 0 50px rgba(255,255,255,0.3);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    /* Mobile tuning */
+    @media (max-width: 480px) {
+      .card {
+        padding: 2.2rem 1.6rem;
+        border-radius: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>
+      Happy Birthday
+      <span class="accent">You Donkey!</span>
+    </h1>
+  </div>
+</body>
+</html>
+

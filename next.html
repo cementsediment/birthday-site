@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For You</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    @font-face {
+      font-family: 'GlacialIndifference';
+      src: url('https://fonts.cdnfonts.com/s/15412/GlacialIndifference-Regular.woff') format('woff');
+      font-weight: normal;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'GlacialIndifference', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    section {
+      min-height: 100vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .content {
+      max-width: 900px;
+      color: black;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      line-height: 1.6;
+    }
+
+    .content p + p {
+      margin-top: 1.5rem;
+    }
+
+    .right-column {
+      text-align: right;
+    }
+
+    /* Audio permission overlay */
+    .audio-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      cursor: pointer;
+    }
+
+    .audio-overlay span {
+      font-size: 1.2rem;
+      color: black;
+      letter-spacing: 0.1em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Audio (user-enabled) -->
+  <audio id="bg-audio" src="audio.mp3" loop></audio>
+
+  <!-- Audio Permission Overlay -->
+  <div class="audio-overlay" id="audioOverlay">
+    <span>Tap to enable audio 🎵</span>
+  </div>
+
+  <!-- Section 1 — 3.jpg (CENTERED text) -->
+  <section style="background-image: url('3.jpg'); justify-content: center;">
+    <div class="content" style="text-align: center;">
+      <p>
+        You keep asking, what I saw? This is what I saw.
+        And I am not here to tell that I love you!
+        But every time I see an angry Sai, I convince myself that this is you
+        and that anger is a temporary part of you and once again happy happy birthday! 🫂
+      </p>
+
+      <p>
+        I wanna meet you soon at least for the sake of whatever I had with you for these
+        11 months even it was nothing for you, it meant the world for me.
+        I keep a count – started talking with you on Feb 11 2025 and here I am on Dec 21 2025!
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 2 — 2.jpg (RIGHT aligned text) -->
+  <section style="background-image: url('2.jpg'); justify-content: flex-end;">
+    <div class="content right-column">
+      <p>
+        I know I got angry and spoke words which can never be forgiven for!
+        But I ask an heartfelt sorry here, apology is yours to accept but all I wanted
+        was a small gesture or talk from you due to which this whole situation raised!
+      </p>
+
+      <p>
+        For the man, I see in you is this whole background
+        (a kind of manifestation is visualisation) – happy birthday!
+      </p>
+    </div>
+  </section>
+
+  <script>
+    const audio = document.getElementById('bg-audio');
+    const overlay = document.getElementById('audioOverlay');
+
+    overlay.addEventListener('click', () => {
+      audio.play();
+      overlay.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>
